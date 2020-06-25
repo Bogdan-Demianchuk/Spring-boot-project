@@ -1,8 +1,8 @@
-package example.boot.spring;
+package com.spring.boot;
 
 import java.util.List;
-import example.boot.spring.Serviсe.FileRiderService;
-import example.boot.spring.Serviсe.impl.LocalFileRiderService;
+import com.spring.boot.service.impl.LocalFileRiderService;
+import com.spring.boot.service.FileRiderService;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,7 +15,7 @@ class ApplicationTests {
     public void readCorrect() {
         List<String> expected = List.of("Hello", "Fiend d");
         List<String> actual = fileRiderService
-                .read("src/test/java/example/boot/spring/resources/TestText");
+                .read("src/test/java/com/spring/boot/resources/TestText");
         Assert.assertEquals(expected, actual);
     }
 

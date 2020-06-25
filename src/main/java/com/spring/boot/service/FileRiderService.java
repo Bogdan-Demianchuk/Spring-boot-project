@@ -1,4 +1,4 @@
-package example.boot.spring.Serviсe;
+package com.spring.boot.service;
 
 import java.util.List;
 
