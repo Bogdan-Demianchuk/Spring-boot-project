@@ -3,7 +3,7 @@ package com.spring.boot.service.impl;
 import com.spring.boot.mapper.ReviewMapper;
 import com.spring.boot.model.dto.ReviewDto;
 import com.spring.boot.service.CsvParserService;
-import com.spring.boot.service.FileRiderService;
+import com.spring.boot.service.FileReaderService;
 import com.univocity.parsers.csv.CsvParser;
 import com.univocity.parsers.csv.CsvParserSettings;
 import java.util.ArrayList;
@@ -12,16 +12,16 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ReviewCsvParser implements CsvParserService {
-    private final FileRiderService fileRiderService;
+    private final FileReaderService fileRiderService;
     private final ReviewMapper reviewMapper;
 
-    public ReviewCsvParser(FileRiderService fileRiderService, ReviewMapper reviewMapper) {
+    public ReviewCsvParser(FileReaderService fileRiderService, ReviewMapper reviewMapper) {
         this.fileRiderService = fileRiderService;
         this.reviewMapper = reviewMapper;
     }
 
     @Override
-    public List<ReviewDto> parcFromCsvToObjects(String path) {
+    public List<ReviewDto> parseCsvFile(String path) {
         List<ReviewDto> reviewDtoList = new ArrayList<>();
         CsvParserSettings csvParserSettings = new CsvParserSettings();
         csvParserSettings.setMaxCharsPerColumn(-1);
