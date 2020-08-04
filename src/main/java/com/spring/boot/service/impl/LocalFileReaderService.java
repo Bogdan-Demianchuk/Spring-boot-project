@@ -1,6 +1,6 @@
 package com.spring.boot.service.impl;
 
-import com.spring.boot.service.FileRiderService;
+import com.spring.boot.service.FileReaderService;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 import org.springframework.stereotype.Service;
 
 @Service
-public class LocalFileRiderService implements FileRiderService {
+public class LocalFileReaderService implements FileReaderService {
     @Override
     public List<String> read(String path) {
         List<String> result;
